@@ -13,11 +13,11 @@ describe MongoidSortedRelations do
 
     a_document.b_document_ids = [b_document_2.id, b_document_3.id, b_document_1.id]
     a_document.save
-    
+
     a_document.reload
   end
 
-  it 'preserves the give order' do
+  it 'preserves the order as stored by ids' do
     a_document.b_documents.must_equal [b_document_2, b_document_3, b_document_1]
   end
 end
